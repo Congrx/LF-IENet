@@ -6,7 +6,7 @@ optimizer = dict(type='SGD',lr=0.01,momentum=0.9,weight_decay=0.0005)
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 
 model = dict(
-    decode_head=dict(type='LFHRHeadSADISRNRANGE', num_classes=14,align_corners=False, input_transform='resize_concat', sai_number=4, key_channels=256, value_channels=512),
+    decode_head=dict(type='LF_IENET_HR', num_classes=14,align_corners=False, input_transform='resize_concat', sai_number=4, key_channels=256, value_channels=512),
     auxiliary_head=[dict(
         type='FCNHead',
         in_channels=[48, 96, 192, 384],

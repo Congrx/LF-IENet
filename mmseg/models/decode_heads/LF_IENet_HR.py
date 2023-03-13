@@ -38,7 +38,7 @@ class CrossFrameAttention(nn.Module):
         total_atten_mask = []
         for i in range(sai_number):    
             atten_mask = torch.zeros([batch_size,1,height,width]).cuda()   # B * 1 * H * W
-            distance = torch.sqrt((sequence_index[:,i,1]-5)**2 + (sequence_index[:,i,0]-5)**2)  # B * 1 * 1 * 1
+            distance = torch.sqrt((sequence_index[:,i,1]-5)**2 + (sequence_index[:,i,0]-5)**2) 
             total_disparity = distance.reshape(batch_size,1,1,1) * disparity      # B * 1 * H * W
             
             atten_mask[total_disparity > self.radius] = weight    
@@ -109,9 +109,9 @@ class SELayer(nn.Module):
         return feature
     
 @HEADS.register_module()
-class LFHRHeadSADISRNRANGE(BaseDecodeHead):
+class LF_IENET_HR(BaseDecodeHead):
     def __init__(self, sai_number, key_channels, value_channels, **kwargs):
-        super(LFHRHeadSADISRNRANGE, self).__init__(**kwargs)
+        super(LF_IENET_HR, self).__init__(**kwargs)
         self.sai_number = sai_number
         self.warp_channel = 512
         
@@ -336,6 +336,8 @@ class LFHRHeadSADISRNRANGE(BaseDecodeHead):
         center_key = self.center_key_conv(center_encoding_feature)  # BxCxHxW
         center_value = self.center_value_conv(center_encoding_feature)  # BxCxHxW
 
+        if len(sequence_index.size()) == 4:
+            sequence_index = sequence_index.squeeze(1)  # batch * 1 * sai_number-1 * 2 -> batch * sai_number-1 * 2
         # step3: improve precision of estimated disparity
         disparity = self.remove_noise(disparity) + disparity
         

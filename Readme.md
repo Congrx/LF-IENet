@@ -44,20 +44,20 @@ This repository is implemented with the open source [mmsegmentation toolbox](htt
    │   │   │   │   ├── label.npy                   	  │   │   │   |   ├── 5_5_label.npy     
    │   │   │   │   ├── disparity_OAVC.npy                │   │   |   |   ├── 5_5_disparity_OAVC.npy               
    │   │   │   ├── Imageyyy                              │   │   │   ├── Imageyyy   
-   |   |   |   ├── Imagezzz							  │   │   │   ├── Imagezzz
+   |   |   |   ├── Imagezzz                              │   │   │   ├── Imagezzz
    │   │   ├── val                                       │   │   ├── val               
    │   │   │   ├── Imagexxx                              │   │   │   ├── Imagexxx              
    │   │   │   │   ├── u_v.png(1_1.png~9_9.png)          │   │   |   |   ├── u_v.png(1_1.png~9_9.png)                    
    │   │   │   │   ├── label.npy                		  │   │   │   |   ├── 5_5_label.npy   
    │   │   │   │   ├── disparity_OAVC.npy                │   │   │   |   ├── 5_5_disparity_OAVC.npy   
    │   │   │   ├── Imageyyy                              │   │   │   ├── Imageyyy   
-   |   |   |   ├── Imagezzz							  |   |   |   ├── Imagezzz
+   |   |   |   ├── Imagezzz                              |   |   |   ├── Imagezzz
    │   │   ├── test                                      │   │   ├── test            
    │   │   │   ├── Imagexxx                              │   │   │   ├── Imagexxx   
    │   │   │   │   ├── u_v.png(1_1.png~9_9.png)          │   │   │   |   ├── u_v.png(1_1.png~9_9.png)  
    │   │   │   │   ├── disparity_OAVC.npy                |   │   │   │   ├── 5_5_disparity_OAVC.npy             
    │   │   │   ├── Imageyyy        				      │   │   │   ├── Imageyyy                            
-   |   |   |   ├── Imagezzz							  │   │   │   ├── Imagezzz 
+   |   |   |   ├── Imagezzz                              │   │   │   ├── Imagezzz 
    ```
 
 ### Train
@@ -65,25 +65,25 @@ This repository is implemented with the open source [mmsegmentation toolbox](htt
 - Train `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Real` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Real/lfsadiscarangernnet_r50-d8_432x432_80k_UrbanLF_Real.py --launcher 'pytorch' 
+CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Real/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real.py --launcher 'pytorch' 
 ```
 
 - Train `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Real` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Real/lfsadiscarangernnet_hr48_432x432_80k_UrbanLF_Real.py --launcher 'pytorch'
+CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Real/LF_IENet_hr48_432x432_80k_UrbanLF_Real.py --launcher 'pytorch'
 ```
 
 - Train `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/lfsadiscarangernnet_r50-d8_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
+CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
 ```
 
 - Train `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/lfsadiscarangernnet_hr48_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
+CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
 ```
 
 ### Test
@@ -91,25 +91,25 @@ CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2
 - Test `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Real` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Real/lfsadiscarangernnet_r50-d8_432x432_80k_UrbanLF_Real.py work_dirs/lfsadiscarangernnet_r50-d8_432x432_80k_UrbanLF_Real/best_mIoU.pth --show-dir img_res 
+CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Real/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real.py work_dirs/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real/best_mIoU.pth --show-dir img_res 
 ```
 
 - Test `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Real` dataset.  
 
 ```SHELL
-CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Real/lfsadiscarangernnet_hr48_432x432_80k_UrbanLF_Real.py work_dirs/lfsadiscarangernnet_hr48_432x432_80k_UrbanLF_Real/best_mIoU.pth --show-dir img_res 
+CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Real/LF_IENet_hr48_432x432_80k_UrbanLF_Real.py work_dirs/LF_IENet_hr48_432x432_80k_UrbanLF_Real/best_mIoU.pth --show-dir img_res 
 ```
 
 - Test `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Syn/lfsadiscarangernnet_r50-d8_480x480_80k_UrbanLF_Syn.py work_dirs/lfsadiscarangernnet_r50-d8_480x480_80k_UrbanLF_Syn/best_mIoU.pth --show-dir img_res
+CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py work_dirs/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn/best_mIoU.pth --show-dir img_res
 ```
 
 - Test `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset.  
 
 ```shell
-CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Syn/lfsadiscarangernnet_hr48_480x480_80k_UrbanLF_Syn.py work_dirs/lfsadiscarangernnet_hr48_480x480_80k_UrbanLF_Syn/best_mIoU.pth --show-dir img_res
+CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py work_dirs/LF_IENet_hr48_480x480_80k_UrbanLF_Syn/best_mIoU.pth --show-dir img_res
 ```
 
 - The predict segmentation result will be saved in `numpy_res/real (UrbanLF-Real)` and `numpy_res/syn (UrbanLF-Syn)`.
@@ -147,14 +147,14 @@ Detailed descriptions of some important files are as following.
 
 - `configs/lf/UrbanLF_Real` , `configs/lf/UrbanLF_Syn`：Specific configuration information about experimental setting.
 
-  - `configs/lf/UrbanLF_Real/lfsadiscarangernnet_r50-d8_432x432_80k_UrbanLF_Real.py`： `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Real` dataset
-  - `configs/lf/UrbanLF_Real/lfsadiscarangernnet_hr48_432x432_80k_UrbanLF_Real.py`： `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Real` dataset
-  - `configs/lf/UrbanLF_Syn/lfsadiscarangernnet_r50-d8_480x480_80k_UrbanLF_Syn.py`： `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset
-  - `configs/lf/UrbanLF_Syn/lfsadiscarangernnet_hr48_480x480_80k_UrbanLF_Syn.py`： `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset
+  - `configs/lf/UrbanLF_Real/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real.py`： `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Real` dataset
+  - `configs/lf/UrbanLF_Real/LF_IENet_hr48_432x432_80k_UrbanLF_Real.py`： `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Real` dataset
+  - `configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py`： `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset
+  - `configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py`： `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset
 
 - `mmseg/datasets/UrbanLF_Real.py `, `mmseg/datasets/UrbanLF_Syn.py`：Dataset loading file about `UrbanLF-Real` and `UrbanLF-Syn`.
 
-- `mmseg/models/decode_heads/lf_head_sa_dis_ca_range_denoise.py`,`mmseg/models/decode_heads/lfhrnet_head_sa_dis_ca_range_denoise.py`：Core composition about the proposed network `LF-IENet-Res50` and `LF-IENet-HR48`, respectively.
+- `mmseg/models/decode_heads/LF_IENet_RES.py`,`mmseg/models/decode_heads/LF_IENet_HR.py`：Core composition about the proposed network `LF-IENet-Res50` and `LF-IENet-HR48`, respectively.
 
 - `pretrained_models`：Pre-trained feature extraction backbones `ResNet50` and `HRNet-48` on `ImageNet`. 
 
