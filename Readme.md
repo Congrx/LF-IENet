@@ -80,7 +80,7 @@ CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2
 CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
 ```
 
-- Train `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset.  
+- Train `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset.   
 
 ```shell
 CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
