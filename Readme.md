@@ -41,14 +41,14 @@ This repository is implemented with the open source [mmsegmentation toolbox](htt
    │   │   ├── train                                     │   │   ├── train  
    │   │   │   ├── Imagexxx                              │   │   │   ├── Imagexxx       
    │   │   │   │   ├── u_v.png(1_1.png~9_9.png)          │   │   │   |   ├── u_v.png(1_1.png~9_9.png)       
-   │   │   │   │   ├── label.npy                   	│   │   │   |   ├── 5_5_label.npy     
+   │   │   │   │   ├── label.npy                         │   │   │   |   ├── 5_5_label.npy     
    │   │   │   │   ├── disparity_OAVC.npy                │   │   |   |   ├── 5_5_disparity_OAVC.npy               
    │   │   │   ├── Imageyyy                              │   │   │   ├── Imageyyy   
    |   |   |   ├── Imagezzz                              │   │   │   ├── Imagezzz
    │   │   ├── val                                       │   │   ├── val               
    │   │   │   ├── Imagexxx                              │   │   │   ├── Imagexxx              
    │   │   │   │   ├── u_v.png(1_1.png~9_9.png)          │   │   |   |   ├── u_v.png(1_1.png~9_9.png)                    
-   │   │   │   │   ├── label.npy                		  │   │   │   |   ├── 5_5_label.npy   
+   │   │   │   │   ├── label.npy                         │   │   │   |   ├── 5_5_label.npy   
    │   │   │   │   ├── disparity_OAVC.npy                │   │   │   |   ├── 5_5_disparity_OAVC.npy   
    │   │   │   ├── Imageyyy                              │   │   │   ├── Imageyyy   
    |   |   |   ├── Imagezzz                              |   |   |   ├── Imagezzz
@@ -56,7 +56,7 @@ This repository is implemented with the open source [mmsegmentation toolbox](htt
    │   │   │   ├── Imagexxx                              │   │   │   ├── Imagexxx   
    │   │   │   │   ├── u_v.png(1_1.png~9_9.png)          │   │   │   |   ├── u_v.png(1_1.png~9_9.png)  
    │   │   │   │   ├── disparity_OAVC.npy                |   │   │   │   ├── 5_5_disparity_OAVC.npy             
-   │   │   │   ├── Imageyyy        				      │   │   │   ├── Imageyyy                            
+   │   │   │   ├── Imageyyy                              │   │   │   ├── Imageyyy                            
    |   |   |   ├── Imagezzz                              │   │   │   ├── Imagezzz 
    ```
 
