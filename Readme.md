@@ -175,7 +175,13 @@ We sincerely thank the authors for sharing their code and amazing research work!
 If you find this work helpful, please consider citing the following papers:
 
 ```
-
+@inproceedings{cong2023lfienet,
+  title={Combining Implicit-Explicit View Correlation for Light Field Semantic Segmentation},
+  author={Cong, Ruixuan and Yang, Da and Chen, Rongshan and Wang, Sizhe and Cui, Zhenglong and Sheng, Hao},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={9172--9181},
+  year={2023}
+}
 ```
 
 ## Contact
