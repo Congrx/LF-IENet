@@ -1,6 +1,6 @@
 # LF-IENet
 
-This is the official pytorch implementation repository of [Combining Implicit-Explicit View Correlation for Light Field Semantic Segmentation.](https://openaccess.thecvf.com/content/CVPR2023/html/Cong_Combining_Implicit-Explicit_View_Correlation_for_Light_Field_Semantic_Segmentation_CVPR_2023_paper.html)
+This is the official pytorch implementation repository of [Combining Implicit-Explicit View Correlation for Light Field Semantic Segmentation.](https://openaccess.thecvf.com/content/CVPR2023/html/Cong_Combining_Implicit-Explicit_View_Correlation_for_Light_Field_Semantic_Segmentation_CVPR_2023_paper.html) (CVPR 2023)
 
 ## Introduction
 
