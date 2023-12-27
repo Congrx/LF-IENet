@@ -152,13 +152,13 @@ Detailed descriptions of some important files are as following.
   - `configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py`： `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset
   - `configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py`： `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset
 
-- `mmseg/datasets/UrbanLF_Real.py `, `mmseg/datasets/UrbanLF_Syn.py`：Dataset loading file about `UrbanLF-Real` and `UrbanLF-Syn`.
+- `mmseg/datasets/UrbanLF_Real.py`, `mmseg/datasets/UrbanLF_Syn.py`：Dataset loading file about `UrbanLF-Real` and `UrbanLF-Syn`.
 
-- `mmseg/models/decode_heads/LF_IENet_RES.py`,`mmseg/models/decode_heads/LF_IENet_HR.py`：Core composition about the proposed network `LF-IENet-Res50` and `LF-IENet-HR48`, respectively.
+- `mmseg/models/decode_heads/LF_IENet_RES.py`,`mmseg/models/decode_heads/LF_IENet_HR.py`：Core composition about the proposed network `LF-IENet-Res50` and `LF-IENet-HR48`, respectively. 
 
 - `pretrained_models`：Pre-trained feature extraction backbones `ResNet50` and `HRNet-48` on `ImageNet`. 
 
-- `work_dirs`：Our pre-trained models $LF-IENet^{4}-Res50$ and `LF-IENet`$^{3}$`-HR48` with default configuration information on `UrbanLF-Real` and `UrbanLF-Syn`. 
+- `work_dirs`：Our pre-trained models `LF-IENet-Res50` and `LF-IENet-HR48` with default configuration information on `UrbanLF-Real` and `UrbanLF-Syn`. 
 
 ## Acknowledgement
 
