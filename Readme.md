@@ -62,25 +62,25 @@ This repository is implemented with the open source [mmsegmentation toolbox](htt
 
 ### Train
 
-- Train `LF-IENet`^4^`-Res50` on `UrbanLF-Real` dataset.  
+- Train `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Real` dataset.  
 
 ```shell
 CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Real/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real.py --launcher 'pytorch' 
 ```
 
-- Train `LF-IENet`^3^`-HR48` on `UrbanLF-Real` dataset.  
+- Train `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Real` dataset.  
 
 ```shell
 CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Real/LF_IENet_hr48_432x432_80k_UrbanLF_Real.py --launcher 'pytorch'
 ```
 
-- Train `LF-IENet`^4^`-Res50` on `UrbanLF-Syn` dataset.  
+- Train `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset.  
 
 ```shell
 CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
 ```
 
-- Train `LF-IENet`^3^`-HR48` on `UrbanLF-Syn` dataset.   
+- Train `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset.   
 
 ```shell
 CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2 --master_port 1123  train.py configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py --launcher 'pytorch' 
@@ -88,25 +88,25 @@ CUDA_VISIBLE_DEVICES='0,1' python -m torch.distributed.launch --nproc_per_node 2
 
 ### Test
 
-- Test `LF-IENet`^4^`-Res50` on `UrbanLF-Real` dataset.  
+- Test `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Real` dataset.  
 
 ```shell
 CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Real/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real.py work_dirs/LF_IENet_r50-d8_432x432_80k_UrbanLF_Real/best_mIoU.pth --show-dir img_res 
 ```
 
-- Test `LF-IENet`^3^`-HR48` on `UrbanLF-Real` dataset.  
+- Test `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Real` dataset.  
 
 ```SHELL
 CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Real/LF_IENet_hr48_432x432_80k_UrbanLF_Real.py work_dirs/LF_IENet_hr48_432x432_80k_UrbanLF_Real/best_mIoU.pth --show-dir img_res 
 ```
 
-- Test `LF-IENet`^4^`-Res50` on `UrbanLF-Syn` dataset.  
+- Test `LF-IENet`$^{4}$`-Res50` on `UrbanLF-Syn` dataset.  
 
 ```shell
 CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Syn/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn.py work_dirs/LF_IENet_r50-d8_480x480_80k_UrbanLF_Syn/best_mIoU.pth --show-dir img_res
 ```
 
-- Test `LF-IENet`^3^`-HR48` on `UrbanLF-Syn` dataset.  
+- Test `LF-IENet`$^{3}$`-HR48` on `UrbanLF-Syn` dataset.  
 
 ```shell
 CUDA_VISIBLE_DEVICES='0' python test.py configs/lf/UrbanLF_Syn/LF_IENet_hr48_480x480_80k_UrbanLF_Syn.py work_dirs/LF_IENet_hr48_480x480_80k_UrbanLF_Syn/best_mIoU.pth --show-dir img_res
