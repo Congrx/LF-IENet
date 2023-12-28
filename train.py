@@ -33,8 +33,6 @@ def parse_args():
         action='store_true',
         help='whether not to evaluate the checkpoint during training')
     group_gpus = parser.add_mutually_exclusive_group()
-    # 创建一个互斥组， argparse 将会确保互斥组中只有一个参数在命令行中可用
-    # gpus和gpu-ids两个参数确保只有一个有作用
     group_gpus.add_argument(
         '--gpus',
         type=int,
@@ -69,7 +67,7 @@ def parse_args():
 def main():
     args = parse_args()
 
-    cfg = Config.fromfile(args.config)  # 将所有py配置文件中的内容存储到cfg变量中
+    cfg = Config.fromfile(args.config) 
     if args.options is not None:
         cfg.merge_from_dict(args.options)
     # set cudnn_benchmark
@@ -103,7 +101,7 @@ def main():
     # create work_dir
     mmcv.mkdir_or_exist(osp.abspath(cfg.work_dir))
     # dump config
-    cfg.dump(osp.join(cfg.work_dir, osp.basename(args.config)))     # 保存所有参数设置到work_dir对应的配置文件中
+    cfg.dump(osp.join(cfg.work_dir, osp.basename(args.config)))    
     # init the logger before other steps
     timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
     timestamp = 'train_' + timestamp
@@ -133,12 +131,10 @@ def main():
     cfg.seed = args.seed
     meta['seed'] = args.seed
     meta['exp_name'] = osp.basename(args.config)
-    # 调用mmseg/models/builder.py的build_segmentor方法创建网络
     model = build_segmentor(
         cfg.model, train_cfg=cfg.train_cfg, test_cfg=cfg.test_cfg)
 
     logger.info(model)
-    # 调用mmseg/dataset/builder.py的build_dataset方法创建数据集，传入参数为cfg.data.train
     datasets = [build_dataset(cfg.data.train)]
     if len(cfg.workflow) == 2:
         val_dataset = copy.deepcopy(cfg.data.val)
@@ -154,7 +150,6 @@ def main():
             PALETTE=datasets[0].PALETTE)
     # add an attribute for visualization convenience
     model.CLASSES = datasets[0].CLASSES
-    # 调用mmseg/apis/train.py的train_segmentor方法开始训练
     
     total = sum([param.nelement() for param in model.parameters()])
     print("Number of parameters: %.4fM" %(total/1e6))
